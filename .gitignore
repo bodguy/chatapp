@@ -1,0 +1,17 @@
+# exclude all files and folders
+/*
+
+# add exception
+!/.babelrc
+!/Dockerfile
+!/dockerw
+!/package.json
+!/.gitignore
+!/README.md
+!/config/
+!/nginx/
+!/src/
+!/public/
+!/package-lock.json
+!/yarn.lock
+!/.dockerignore

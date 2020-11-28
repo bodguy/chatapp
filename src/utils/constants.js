@@ -1,0 +1,1 @@
+export const routerPrefix = process.env.PUBLIC_URL;

@@ -1,0 +1,24 @@
+#!/bin/bash
+DOCKER_REGISTRY=localhost:5000
+DOCKER_USERNAME=user
+DOCKER_PASSWORD=user
+PACKAGE_NAME=$(cat package.json | grep name | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]')
+PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]')$(date '+-%Y%m%d-%H%M%S')
+
+ACTION=$1
+PROFILE=$2
+BUILD_ID=$PACKAGE_NAME:$PACKAGE_VERSION
+
+if [ -z "$1" ] ; then
+  echo "Usage: $0 push or $0 build local/alpha/beta/real"
+else
+  if [ "$ACTION" == "push" ] ; then 
+    docker login $DOCKER_REGISTRY -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" >/dev/null 2>&1
+    docker push $DOCKER_REGISTRY/$BUILD_ID
+  elif [ "$ACTION" == "build" ] ; then
+    docker build --build-arg ACTIVE_PROFILE=$PROFILE --build-arg BUILD_ID=$BUILD_ID -t $DOCKER_REGISTRY/$PACKAGE_NAME:latest -t $DOCKER_REGISTRY/$BUILD_ID .
+    docker image prune -f --filter label=stage=build --filter label=build=$BUILD_ID
+  else
+    echo "not supported action: $ACTION $PROFILE"
+  fi
+fi
