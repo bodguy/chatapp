@@ -1,7 +1,7 @@
 {
-  "name": "react-bootstrap",
+  "name": "chatapp",
   "version": "0.0.1",
-  "description": "",
+  "description": "chatting app",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --hot --progress --config config/webpack.local.js",
