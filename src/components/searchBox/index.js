@@ -30,7 +30,7 @@ const SearchBox = () => {
         <Input type="text" placeholder="검색" onKeyDown={onOpenSnakbar} />
       </SearchForm>
 
-      {/* <SnackBar message={message} onClose={() => setMessage('')} /> */}
+      <SnackBar message={message} onClose={() => setMessage('')} />
     </SearchBarContainer>
   );
 };

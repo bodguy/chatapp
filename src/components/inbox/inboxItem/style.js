@@ -70,7 +70,6 @@ export const InboxItemContainer = styled(ColumnFlex)`
   max-width: 100%;
   min-width: 0px;
   overflow: hidden;
-  user-select: none;
   padding: 12px 20px 12px 12px;
   position: relative;
   border-bottom: 1px solid #dae3ed;

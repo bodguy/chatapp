@@ -28,7 +28,7 @@
     "react-medium-image-zoom": "^4.3.1",
     "react-router-dom": "^5.2.0",
     "react-spring": "^8.0.27",
-    "react-transition-group": "^4.4.1",
+    "react-transition-group": "1.x",
     "react-waypoint": "^9.0.3",
     "styled-components": "^5.2.1",
     "superagent": "^6.1.0"

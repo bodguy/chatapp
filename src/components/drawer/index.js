@@ -12,7 +12,7 @@ import {
 
 const Drawer = ({ open, position, ...props }) => {
   return (
-    <React.Fragment>
+    <>
       <TransitionGroup>
         <CSSTransitionGroup
           transitionName="fade"
@@ -36,7 +36,7 @@ const Drawer = ({ open, position, ...props }) => {
           {props.children}
         </DrawerInnerContents>
       </DrawerContainer>
-    </React.Fragment>
+    </>
   );
 }
 
