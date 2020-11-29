@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import MainPage from 'views/MainPage';
+import RootRouter from 'views/rootRouter';
 
 const Routes = () => (
     <Switch>
-        <Route to="/" component={MainPage} />
+        <Route to="/" component={RootRouter} />
     </Switch>
 );
 
