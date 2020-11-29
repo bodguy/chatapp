@@ -11,7 +11,6 @@ export const InboxHeaderContainer = styled(RowFlex)`
 `;
 
 export const OuterBoxContainer = styled(ColumnFlex)`
-  border-bottom: 1px solid #ecf0f1;
   background: white;
 `;
 

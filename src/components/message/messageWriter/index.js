@@ -88,7 +88,7 @@ const MessageWriter = () => {
       <ReactTextareaAutocomplete
         trigger={EmojiTrigger}
         loadingComponent={() => <LoadingSpinner size="small" />}
-        placeholder="메세지를 입력하세요."
+        placeholder="메시지를 입력하세요."
         value={messageValue}
         onChange={e => setMessageValue(e.target.value)}
         onKeyDown={handleEnterKey}

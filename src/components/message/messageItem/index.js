@@ -34,11 +34,6 @@ const MessageItem = ({ index, value }) => (
         <Item msg={value.msg} dateTime={value.dateTime} who={value.type ? 'mine' : 'your'} /> 
       )
     }
-    {/* <MessageWaiting>
-      <MessageWaitingBubble />
-      <MessageWaitingBubble />
-      <MessageWaitingBubble />
-    </MessageWaiting> */}
   </ItemContainer>
 );
 

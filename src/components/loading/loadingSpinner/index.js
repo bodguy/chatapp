@@ -8,8 +8,8 @@ import {
 
 const loaderSize = {
   small: '20px',
-  medium: '30px',
-  large: '50px',
+  medium: '40px',
+  large: '60px',
 }
 
 const LoadingSpinner = ({ size }) => {

@@ -16,6 +16,7 @@ export const InnerBox = styled(RowFlex)`
 export const Thumbnail = styled.div`
   flex: 0 0 auto;
   margin-right: 15px;
+  margin-left: 10px;
 
   position: relative;
   width: ${size}rem;
@@ -76,7 +77,7 @@ export const InboxItemContainer = styled(ColumnFlex)`
   cursor: pointer;
   background: ${props => (props.active ? '#0073f9' : 'rgb(255, 255, 255)')};
   font-size: ${props => props.theme.smallFontSize};
-  border-radius: ${props => (props.active ? '6px' : '0px')};
+  border-radius: ${props => (props.active ? '7px' : '0px')};
 
   ${Name} {
     color: ${props => (props.active ? '#eff0f1' : '#121212')};
