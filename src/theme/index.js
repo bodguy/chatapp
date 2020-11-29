@@ -1,8 +1,8 @@
 export default {
   fontFamily: 'Arial, Helvetica, sans-serif',
-  normalFontSize: '14px',
-  smallFontSize: '12px',
-  verySmallFontSize: '10px',
+  normalFontSize: '0.9rem',
+  smallFontSize: '0.77rem',
+  verySmallFontSize: '0.6rem',
   fontWeight: '400',
   fontStyle: 'normal',
   letterSpacing: '0',

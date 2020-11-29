@@ -13,9 +13,7 @@ import {
 const InboxItem = ({ index, thumbnailPath, name, dateTime, active, onClick, ...props }) => (
   <InboxItemContainer key={index} active={active} onClick={onClick}>
     <InnerBox>
-      <Thumbnail>
-        <Image src={thumbnailPath} />
-      </Thumbnail>
+      <Thumbnail profile={thumbnailPath} />
       <Topic>
         <Name>{name}</Name>
         <Contents>

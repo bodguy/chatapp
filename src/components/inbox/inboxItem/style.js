@@ -4,6 +4,10 @@ import {
   ColumnFlex,
 } from '@/global/style';
 
+const size = 2.8;
+const radius1 = size / 2;
+const radius2 = size / 5;
+
 export const InnerBox = styled(RowFlex)`
   justify-content: space-between;
   min-width: 200px;
@@ -11,16 +15,30 @@ export const InnerBox = styled(RowFlex)`
 
 export const Thumbnail = styled.div`
   flex: 0 0 auto;
-  width: 45px;
-  height: 45px;
   margin-right: 15px;
-`;
 
-export const Image = styled.img`
-  border-radius: 20%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: relative;
+  width: ${size}rem;
+  height: ${size + radius2}rem;
+  border-radius: ${radius1}rem/${radius2}rem;
+	background: url('${props => props.profile}') no-repeat center center/cover;
+	box-sizing: border-box;
+  text-align: center;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: ${radius2 / 2}rem;
+    left: ${-1 * radius2 / 2}rem;
+    width: ${size + radius2}rem;
+    height: ${size}rem;
+    z-index: 0;
+    background: url('${props => props.profile}') no-repeat center center/cover;
+    border-radius: ${radius2}rem/${radius1}rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
 `;
 
 export const Name = styled.div`
