@@ -27,8 +27,7 @@ export const DrawerInnerContents = styled(ColumnFlex)`
   bottom: 0px;
 
   > ul {
-    border-top: 1px solid #eceff1;
-    margin: 0px;
+    margin: 10px;
     padding: 10px 0px;
 
     li {
@@ -75,6 +74,7 @@ export const CloseContainer = styled.div`
   flex-direction: ${props => props.position === 'left' ? 'row-reverse' : 'row'};
   flex: 0 0 auto;
   margin: 0px;
+  border-bottom: 1px solid #eceff1;
 `;
 
 export const CloseButton = styled.button`

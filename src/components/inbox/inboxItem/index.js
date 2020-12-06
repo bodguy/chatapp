@@ -5,7 +5,6 @@ import {
   Thumbnail, 
   Contents,
   Name,
-  Image,
   Topic,
   Stats,
 } from './style';

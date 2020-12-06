@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PageNotFound from '@/PageNotFound';
+import PageNotFound from '@/pageNotFound';
 import { routerPrefix } from 'utils/constants';
 import MessageView from 'views/messageView';
 import Dashboard from 'views/dashboard';

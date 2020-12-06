@@ -1,6 +1,7 @@
 import React from 'react';
 import Drawer from '@/drawer';
 import SliderButton from '@/sliderButton';
+import { PanelItem } from './style';
 
 const ControlPanel = ({ onClick, open }) => {
 
@@ -8,16 +9,20 @@ const ControlPanel = ({ onClick, open }) => {
     <Drawer onClick={onClick} open={open} position='right'>
       <ul>
         <li>
-          <div style={{ flex: '1 1 auto', fontSize: '15px' }}>Notifications</div>
+          <PanelItem>알림</PanelItem>
           <SliderButton id="toggle1" size="small" />
         </li>
         <li>
-          <div style={{ flex: '1 1 auto', fontSize: '15px' }}>Sidebar</div>
+          <PanelItem>메시지 미리보기</PanelItem>
           <SliderButton id="toggle2" size="small" />
         </li>
         <li>
-          <div style={{ flex: '1 1 auto', fontSize: '15px' }}>Automatically replace emojis</div>
+          <PanelItem>첨부파일 자동 다운로드</PanelItem>
           <SliderButton id="toggle3" size="small" />
+        </li>
+        <li>
+          <PanelItem>비디오 자동 재생</PanelItem>
+          <SliderButton id="toggle4" size="small" />
         </li>
       </ul>
     </Drawer>

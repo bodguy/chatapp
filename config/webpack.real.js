@@ -13,7 +13,7 @@ dotenv.config({ path: env });
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    path: path.join(__dirname, '../build'),
+    path: path.resolve(__dirname, '../build'),
     publicPath: '/',
     filename: '[name].[fullhash].bundle.js',
   },
@@ -26,7 +26,7 @@ module.exports = merge(common, {
     new Dotenv({
       path: env,
     }),
-    new CleanWebpackPlugin({ root: path.join(__dirname, '../build') }),
+    new CleanWebpackPlugin({ root: 'build' }),
     new BrotliPlugin({
       asset: '[path].br[query]',
       test: /\.(js|css|html|svg)$/,

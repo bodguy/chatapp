@@ -11,7 +11,7 @@ dotenv.config({ path: env });
 module.exports = merge(common, {
   mode: 'development',
   output: {
-    path: path.join(__dirname, '../build'),
+    path: path.resolve(__dirname, '../build'),
     publicPath: '/',
     filename: '[name].bundle.js',
   },
@@ -24,7 +24,7 @@ module.exports = merge(common, {
     new Dotenv({
       path: env,
     }),
-    new CleanWebpackPlugin({ root: path.join(__dirname, '../build') }),
+    new CleanWebpackPlugin({ root: 'build' }),
   ],
   devServer: {
     host: 'localhost',

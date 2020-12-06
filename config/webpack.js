@@ -2,8 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: __dirname,
-  entry: ['../src/index.js'],
+  context: path.resolve(__dirname, '..'),
+  entry: ['./src/index.js'],
   module: {
     rules: [
       {
@@ -41,17 +41,17 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: [path.resolve(__dirname, '../src'), 'node_modules'],
+    modules: ['src', 'node_modules'],
     alias: {
-      '@': path.resolve(__dirname, '../src/components'),
+      '@': 'components',
     },
     extensions: ['.js', '.jsx', '.json'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../public/index.html'),
+      template: 'public/index.html',
       filename: 'index.html',
-      favicon: "../public/favicon.ico",
+      favicon: 'public/favicon.ico',
     }),
   ],
 };

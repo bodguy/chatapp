@@ -1,5 +1,5 @@
-import ErrorBoundary from './errorBoundary';
-import ErrorFallback from './errorFallback';
+import ErrorBoundary from './ErrorBoundary';
+import ErrorFallback from './ErrorFallback';
 
 export {
   ErrorBoundary,
