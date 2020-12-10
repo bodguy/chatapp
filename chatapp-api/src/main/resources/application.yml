@@ -1,0 +1,80 @@
+spring:
+  profiles:
+    active: alpha
+  application:
+    name: simple-api
+
+server:
+  servlet:
+    context-path: /api
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+---
+spring:
+  profiles: local, alpha
+
+---
+spring:
+  profiles: beta, real
+  jpa:
+    generate-ddl: false
+    show-sql: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+
+---
+spring:
+  profiles: local
+  datasource:
+    hikari:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:./data/testdb
+      username: sa
+      password:
+    h2:
+      console:
+        enabled: true
+        path: /h2-console
+    jpa:
+      generate-ddl: true
+      show-sql: true
+      open-in-view: false
+      hibernate:
+        ddl-auto: create-drop
+      properties:
+        hibernate:
+          format_sql: true
+          dialect: org.hibernate.dialect.H2Dialect
+
+---
+spring:
+  profiles: alpha
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost/test_me?serverTimezone=UTC
+      username: root
+      password: root
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
