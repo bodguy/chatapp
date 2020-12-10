@@ -24,13 +24,13 @@ class GlobalExceptionHandler {
 
     @ExceptionHandler(value = [IllegalArgumentException::class, MethodArgumentNotValidException::class])
     fun handleIllegalException(ex: Exception): ResponseEntity<*> {
-        logger.error("illegal argument!", ex)
+        logger.error("Illegal argument!", ex)
         return ResponseEntity<Response>(Response(ex.message, ErrorDescriptor.INVALID_ARGUMENT), HttpStatus.BAD_REQUEST)
     }
 
     @ExceptionHandler(value = [NoResultException::class, NonUniqueResultException::class])
     fun handleNoResultException(ex: Exception): ResponseEntity<*> {
-        logger.error("jpa no result!", ex)
+        logger.error("No result!", ex)
         return ResponseEntity<Response>(Response(ex.message, ErrorDescriptor.NO_RESULT), HttpStatus.BAD_REQUEST)
     }
 }

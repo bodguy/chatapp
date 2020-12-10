@@ -30,7 +30,6 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.3")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("com.h2database:h2:1.4.199")
     implementation("mysql:mysql-connector-java")
     implementation("org.springframework.boot:spring-boot-devtools") // setting h2 configuration
     implementation("org.springframework.boot:spring-boot-starter-validation")
